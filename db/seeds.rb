@@ -19,9 +19,3 @@ Recipe.create!(name: "Bruschetta", description: "Fresh flavours abound in Donna 
 Recipe.create!(name: "Roast beef dinner", description: "A great family roast, cooked in a casserole with lots of vegetables to add flavour to the gravy.", image_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/roast_beef_dinner_76669_16x9.jpg" , rating: "5")
 
 puts "Created #{Recipe.count} recipes"
-
-# create_table "recipes", force: :cascade do |t|
-#   t.string "name"
-#   t.text "description"
-#   t.string "image_url"
-#   t.integer "rating"
