@@ -1,0 +1,80 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card-category {
+  color: white;
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    p{
+      font-size: 18px;
+      color: white;
+    }
+}
+.card-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 300px;
+  position: relative;
+}
+
+.card-trip > img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.bottom-info{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-delete{
+  position:absolute;
+  right: 20px;
+  top: 10px;
+  i{
+    color: rgb(10, 9, 9);
+    &:hover {
+      color:red;
+    }
+  }
+}

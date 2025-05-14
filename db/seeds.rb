@@ -7,6 +7,10 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+puts "Cleaning database"
+Recipe.destroy_all
+
 puts "Creating recipes..."
 Recipe.create!(name: "Healthy breakfast pot", description: "Overnight oats are perfect as a grab-and-go healthy breakfast pot", image_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/healthy_breakfast_pot_96291_16x9.jpg" , rating: "5")
 

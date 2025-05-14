@@ -1,0 +1,17 @@
+.form-new{
+  background-color: white;
+  width: 450px;
+  margin:100px auto;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 15, 0.2);
+  border: solid 1px #ccc;
+
+  h3{
+    opacity: .7;
+  }
+}
+
+.form-new label{
+  display: none;
+}

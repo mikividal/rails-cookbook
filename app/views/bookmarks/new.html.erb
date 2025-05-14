@@ -1,8 +1,12 @@
-<h1>Add a Recipe</h1>
 
-<%= simple_form_for [@category, @bookmark] do |f| %>
-  <%= f.input :comment %>
-  <%= f.association :recipe %>
-  <%= f.association :category %>
-  <%= f.submit %>
-<% end %>
+<div class="form-new">
+  <h3>Add a Recipe to <%= @category.name %></h3>
+
+  <%= simple_form_for [@category, @bookmark] do |f| %>
+    <%= f.association :recipe %>
+    <%= f.input :comment, placeholder: "Your comment here..." %>
+    <%= f.submit 'Add Recipe', class:"btn btn-info"%>
+  <% end %>
+
+  <p>Back to <%= link_to @category.name, category_path(@category) %> </p>
+</div>
