@@ -23,3 +23,31 @@ Recipe.create!(name: "Bruschetta", description: "Fresh flavours abound in Donna 
 Recipe.create!(name: "Roast beef dinner", description: "A great family roast, cooked in a casserole with lots of vegetables to add flavour to the gravy.", image_url: "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/roast_beef_dinner_76669_16x9.jpg" , rating: "5")
 
 puts "Created #{Recipe.count} recipes"
+
+require "json"
+require "open-uri"
+
+
+recipescat = ["Pasta", "Seafood", "Dessert", "Chicken"]
+recipescat.each do |recipecat|
+  @chosen = recipecat
+end
+
+
+url = "https://www.themealdb.com/api/json/v1/1/filter.php?c=#{@chosen}"
+recipes_serialized = URI.parse(url).read
+newrecipes = JSON.parse(recipes_serialized)
+
+def recipe_builder(id)
+  url = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=#{id}"
+  recipe_serialized = URI.parse(url).read
+  newmeal = JSON.parse(recipe_serialized)
+  newrecipe = newmeal["meals"][0]
+
+  Recipe.create!(name: "#{newrecipe["strMeal"]}", description: "#{newrecipe["strInstructions"]}", image_url: "#{newrecipe["strMealThumb"]}", rating: (0..5).to_a.sample)  
+end
+
+newrecipes["meals"].each do |meal|
+  @id = meal["idMeal"]
+  recipe_builder(@id)
+end

@@ -18,7 +18,7 @@
   <div class ="cards">
     <% @categories.each do |category| %>
       <%= link_to category_path(category)  do%>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png)">
+      <div class="card-category" style="background-image: url('<%= cl_image_path category.photo.key, crop: :fill %>')">
         <h3> <%= category.name %> </h3>
         <p> <%= category.recipes.count %> recipes </p>
       </div>
